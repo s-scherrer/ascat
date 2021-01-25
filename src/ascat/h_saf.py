@@ -25,7 +25,6 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import sys
 import os
 import warnings
 from gzip import GzipFile
@@ -33,6 +32,7 @@ from tempfile import NamedTemporaryFile
 from datetime import datetime, timedelta
 
 import numpy as np
+
 try:
     import pygrib
 except ImportError:
@@ -46,9 +46,6 @@ from pygeobase.object_base import Image
 import ascat.read_native.bufr as bufr_reader
 from ascat.read_native.bufr import AscatL2SsmBufr
 from ascat.read_native.cdr import AscatNc
-
-if sys.version_info < (3, 0):
-    range = xrange
 
 
 class H08Single(ImageBase):
